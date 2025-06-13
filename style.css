@@ -9,10 +9,15 @@ html, body {
 }
 
 body {
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #2c3e50;
+  min-height: 100vh;
+  background: #e6a0a9; /* Darker pink background */
+  font-family: 'Pacifico', cursive;
+  overflow: hidden;
 }
 
 .box {
