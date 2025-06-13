@@ -201,6 +201,17 @@ var ParticlePool = (function() {
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
   }
+  
+  // Add heartbeat sound
+  const heartbeatSound = new Audio('sounds/heartbeat.mp3');
+  heartbeatSound.volume = 1.0; // Set volume to maximum (100%)
+  heartbeatSound.loop = true; // Enable continuous looping
+  
+  // Play heartbeat sound immediately
+  heartbeatSound.play().catch(error => {
+    console.log('Error playing sound:', error);
+  });
+
   window.onresize = onResize;
   onResize();
   render();
