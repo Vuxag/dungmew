@@ -1,47 +1,28 @@
-<!DOCTYPE HTML>
-<html>
- <head>
-  <title>Dung Meoww</title>
-  <meta name="Generator" content="EditPlus">
-  <meta name="Author" content="">
-  <meta name="Keywords" content="">
-  <meta name="Description" content="">
-  <link rel="icon" type="image/svg+xml" href="images/1.svg">
-  <link rel="apple-touch-icon" href="images/1.svg">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    html, body {
-      height: 100%;
-      padding: 0;
-      margin: 0;
-      background: rgba(0, 0, 0, 0.851);
-    }
-    canvas {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
- </head>
- <body>
-  <div class="box">
-    <canvas id="pinkboard"></canvas>
-  </div>
-  <h1 class="name">Dung Meoww</h1>
-  <audio id="heartbeat" src="sounds/heartbeat.mp3" preload="auto"></audio>
-  <script src="script.js"></script>
-  <script>
-    // Phát âm thanh nhịp đập
-    const heartbeat = document.getElementById('heartbeat');
-    heartbeat.volume = 0.5; // Điều chỉnh âm lượng (0.0 đến 1.0)
-
-    function playHeartbeat() {
-      heartbeat.currentTime = 0;
-      heartbeat.play();
-    }
-
-    // Phát âm thanh mỗi 1.2 giây (cùng với animation)
-    setInterval(playHeartbeat, 1200);
-  </script>
- </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dung Meoww</title>
+    <link rel="icon" type="image/svg+xml" href="images/1.svg">
+    <link rel="apple-touch-icon" href="images/1.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <canvas id="pinkboard"></canvas>
+    </div>
+    <h1 class="name">Dung Meoww</h1>
+    <audio id="heartbeat" src="sounds/heartbeat.mp3" preload="auto"></audio>
+    <script src="script.js"></script>
+    <script>
+        const heartbeat = document.getElementById('heartbeat');
+        heartbeat.volume = 0.5;
+        function playHeartbeat() {
+            heartbeat.currentTime = 0;
+            heartbeat.play();
+        }
+        setInterval(playHeartbeat, 1200);
+    </script>
+</body>
 </html> 

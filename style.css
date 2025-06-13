@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@900&display=swap');
 
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.851);
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -16,6 +23,12 @@ body {
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
+}
+
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 #pinkboard {
