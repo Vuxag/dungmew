@@ -174,7 +174,7 @@ var ParticlePool = (function() {
       context.lineTo(point.x, point.y);
     }
     context.closePath();
-    context.fillStyle = '#f50b02';
+    context.fillStyle = '#D61986';
     context.fill();
     var image = new Image();
     image.src = canvas.toDataURL();
