@@ -26,6 +26,20 @@
     <canvas id="pinkboard"></canvas>
   </div>
   <h1 class="name">Dung Meoww</h1>
+  <audio id="heartbeat" src="sounds/heartbeat.mp3" preload="auto"></audio>
   <script src="script.js"></script>
+  <script>
+    // Phát âm thanh nhịp đập
+    const heartbeat = document.getElementById('heartbeat');
+    heartbeat.volume = 0.5; // Điều chỉnh âm lượng (0.0 đến 1.0)
+
+    function playHeartbeat() {
+      heartbeat.currentTime = 0;
+      heartbeat.play();
+    }
+
+    // Phát âm thanh mỗi 1.2 giây (cùng với animation)
+    setInterval(playHeartbeat, 1200);
+  </script>
  </body>
 </html> 
