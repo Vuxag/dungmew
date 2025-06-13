@@ -18,7 +18,7 @@ body {
   align-items: center;
   min-height: 100vh;
   background: #27091A; /* Dark purple background */
-  font-family: 'Pattaya', sans-serif;
+  font-family: 'Pattaya', cursive;
   overflow: hidden;
 }
 
@@ -36,6 +36,8 @@ canvas {
   position: absolute;
   width: 100%;
   height: 100%;
+  display: block;
+  margin: 0 auto;
 }
 
 #pinkboard {
@@ -102,13 +104,13 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #ffffff;
-  font-size: 2em;
+  font-size: 2.125em;
   text-align: center;
   z-index: 1;
   text-shadow: 
-      2px 2px 4px rgba(0, 0, 0, 0.7),
-      -2px -2px 4px rgba(0, 0, 0, 0.7),
-      0 0 8px rgba(214, 25, 134, 0.5); /* Add pink glow effect */
+      2px 2px rgba(0, 0, 0, 0.7),
+      -2px -2px rgba(0, 0, 0, 0.7),
+      0 0 10px rgba(214, 25, 134, 0.5);
   margin: 0;
   padding: 0;
   width: 100%;
