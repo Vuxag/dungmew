@@ -13,16 +13,24 @@
         <canvas id="pinkboard"></canvas>
     </div>
     <h1>Dung Meoww &lt;3</h1>
-    <audio id="heartbeat" src="sounds/heartbeat.mp3" preload="auto"></audio>
+    <audio id="heartbeat" src="assets/sounds/heartbeat.mp3" preload="auto"></audio>
     <script src="script.js"></script>
     <script>
         const heartbeat = document.getElementById('heartbeat');
         heartbeat.volume = 0.5;
-        function playHeartbeat() {
-            heartbeat.currentTime = 0;
-            heartbeat.play();
-        }
-        setInterval(playHeartbeat, 1200);
+
+        // Tự động phát âm thanh một lần khi trang web được tải
+        window.addEventListener('load', function() {
+            heartbeat.play().catch(function(error) {
+                console.log("Error playing sound:", error);
+                // Nếu không thể tự động phát, thêm sự kiện click
+                document.addEventListener('click', function() {
+                    heartbeat.play().catch(function(error) {
+                        console.log("Error playing sound:", error);
+                    });
+                }, { once: true });
+            });
+        });
     </script>
 </body>
 </html>

@@ -13,23 +13,109 @@ html, body {
 body {
   margin: 0;
   padding: 0;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background: #27091A; /* Dark purple background */
   font-family: 'Pattaya', cursive;
-  overflow: hidden;
 }
 
-.box {
-  width: 1000px;
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.heart {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #ff0000;
+  transform: rotate(45deg);
+  animation: heartbeat 1.2s infinite;
+  cursor: pointer;
+}
+
+.heart:before,
+.heart:after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #ff0000;
+  border-radius: 50%;
+}
+
+.heart:before {
+  left: -50px;
+}
+
+.heart:after {
+  top: -50px;
+}
+
+.heart.active {
+  animation: pulse 1s;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: rotate(45deg) scale(1);
+  }
+  14% {
+    transform: rotate(45deg) scale(1.3);
+  }
+  28% {
+    transform: rotate(45deg) scale(1);
+  }
+  42% {
+    transform: rotate(45deg) scale(1.3);
+  }
+  70% {
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: rotate(45deg) scale(1);
+  }
+  50% {
+    transform: rotate(45deg) scale(1.5);
+  }
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+h1 {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
+  color: #ffffff;
+  font-size: 2.125em;
+  text-align: center;
+  z-index: 1;
+  text-shadow: 
+      2px 2px rgba(0, 0, 0, 0.7),
+      -2px -2px rgba(0, 0, 0, 0.7),
+      0 0 10px rgba(214, 25, 134, 0.5);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.box {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 canvas {
@@ -41,11 +127,12 @@ canvas {
 }
 
 #pinkboard {
-  position: relative;
-  margin: auto;
-  height: 750px;
-  width: 750px;
-  animation: animate 1.2s infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 #pinkboard:before, #pinkboard:after {
@@ -98,21 +185,28 @@ canvas {
   z-index: 1000;
 }
 
-h1 {
-  position: absolute;
-  top: 50%;
+.sound-button {
+  position: fixed;
+  bottom: 20px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  color: #ffffff;
-  font-size: 2.125em;
-  text-align: center;
-  z-index: 1;
-  text-shadow: 
-      2px 2px rgba(0, 0, 0, 0.7),
-      -2px -2px rgba(0, 0, 0, 0.7),
-      0 0 10px rgba(214, 25, 134, 0.5);
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  pointer-events: none;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #D61986;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(214, 25, 134, 0.5);
+  transition: all 0.3s ease;
+}
+
+.sound-button:hover {
+  background-color: #ff1493;
+  transform: translateX(-50%) scale(1.05);
+}
+
+.sound-button:active {
+  transform: translateX(-50%) scale(0.95);
 } 
