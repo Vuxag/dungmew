@@ -203,7 +203,7 @@ var ParticlePool = (function() {
   }
   
   // Add heartbeat sound
-  const heartbeatSound = new Audio('sounds/heartbeat.mp3');
+  const heartbeatSound = new Audio('sounds/Heartbeat sound.mp3');
   heartbeatSound.volume = 1.0; // Set volume to maximum (100%)
   heartbeatSound.loop = true; // Enable continuous looping
   
