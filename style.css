@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
 
 html, body {
   height: 100%;
@@ -16,7 +17,7 @@ body {
   align-items: center;
   min-height: 100vh;
   background: #27091A; /* Dark purple background */
-  font-family: 'Pacifico', cursive;
+  font-family: 'Mea Culpa', cursive;
   overflow: hidden;
 }
 
@@ -92,4 +93,16 @@ canvas {
   text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
   transform: rotate(-7deg);
   z-index: 1000;
+}
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #D61986;
+  font-size: 4em;
+  text-align: center;
+  z-index: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 } 
