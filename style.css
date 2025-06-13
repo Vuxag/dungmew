@@ -105,7 +105,10 @@ h1 {
   font-size: 2em;
   text-align: center;
   z-index: 1;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 
+      2px 2px 4px rgba(0, 0, 0, 0.7),
+      -2px -2px 4px rgba(0, 0, 0, 0.7),
+      0 0 8px rgba(214, 25, 134, 0.5); /* Add pink glow effect */
   margin: 0;
   padding: 0;
   width: 100%;
