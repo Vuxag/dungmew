@@ -24,19 +24,21 @@ box-sizing: border-box;
 
 }
 
-html,
-
 body {
+
+background-color: #000;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+min-height: 100vh;
+
+font-family: Arial, sans-serif;
 
 overflow: hidden;
-
-background-color: #000 !important;
-
-}
-
-body {
-
--webkit-font-soothing: antialiased;
 
 }
 
@@ -102,11 +104,15 @@ border: none;
 
 cursor: pointer;
 
+z-index: 2;
+
 }
 
 svg{
 
-width: 3.5vh;
+width: clamp(24px, 8vw, 48px);
+
+height: auto;
 
 }
 
@@ -126,7 +132,7 @@ align-items: center;
 
 justify-content: flex-start;
 
-padding-top: 50px;
+padding-top: 20px;
 
 }
 
@@ -134,7 +140,7 @@ padding-top: 50px;
 
 color: #ffffff;
 
-font-size: 3em;
+font-size: clamp(2em, 8vw, 3em);
 
 text-align: center;
 
@@ -147,6 +153,10 @@ text-shadow: 2px 2px 4px rgba(0,0,0,0.5),
 z-index: 1;
 
 font-family: 'Lobster', cursive;
+
+padding: 0 20px;
+
+word-wrap: break-word;
 
 }
 
@@ -186,6 +196,58 @@ left: 0;
 
 z-index: 0;
 
+width: 100% !important;
+
+height: 100% !important;
+
+}
+
+@media (max-width: 768px) {
+
+.container {
+
+padding-top: 15px;
+
+}
+
+.logo {
+
+font-size: clamp(1.5em, 6vw, 2.5em);
+
+}
+
+button {
+
+height: 10vh;
+
+width: 10vh;
+
+}
+
+}
+
+@media (max-width: 480px) {
+
+.container {
+
+padding-top: 10px;
+
+}
+
+.logo {
+
+font-size: clamp(1.2em, 5vw, 2em);
+
+}
+
+button {
+
+height: 8vh;
+
+width: 8vh;
+
+}
+
 }
 
 </style>
@@ -220,7 +282,7 @@ window.parent.postMessage("resize", "*");
 
 <button id="play-music" type="button" aria-label="Play music" style="opacity: 1;"><svg fill="currentColor" viewBox="0 0 512 512" width="100" title="music">
 
-<!-- <path d="M470.38 1.51L150.41 96A32 32 0 0 0 128 126.51v261.41A139 139 0 0 0 96 384c-53 0-96 28.66-96 64s43 64 96 64 96-28.66 96-64V214.32l256-75v184.61a138.4 138.4 0 0 0-32-3.93c-53 0-96 28.66-96 64s43 64 96 64 96-28.65 96-64V32a32 32 0 0 0-41.62-30.49z" /> -->
+<path d="M470.38 1.51L150.41 96A32 32 0 0 0 128 126.51v261.41A139 139 0 0 0 96 384c-53 0-96 28.66-96 64s43 64 96 64 96-28.66 96-64V214.32l256-75v184.61a138.4 138.4 0 0 0-32-3.93c-53 0-96 28.66-96 64s43 64 96 64 96-28.65 96-64V32a32 32 0 0 0-41.62-30.49z" />
 
 </svg></button>
 
@@ -908,7 +970,7 @@ const audioLoader = new THREE.AudioLoader();
 
 audioLoader.load(
 
-"https://res.cloudinary.com/dmnxeusyw/video/upload/v1668310333/sharecs.net/music_ji3iak.mp3",
+"https://res.cloudinary.com/dajmid68o/video/upload/v1749930113/LIMBO_-_keshi_Lyrics_Vietsub_ryhesi.mp3",
 
 buffer => {
 
